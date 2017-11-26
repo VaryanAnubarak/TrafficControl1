@@ -5,7 +5,9 @@
  */
 package Control;
 
+import Modelo.VehiculoPojo;
 import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
 
 /**
  *
@@ -13,7 +15,30 @@ import javax.ejb.Stateless;
  */
 @Stateless
 public class VehiculoDao implements VehiculoDaoLocal {
+    
+    private EntityManager em;
+    public void anadirVehiculo(VehiculoPojo vehiculo) {
+        em.persist(vehiculo);
+    }
 
-    // Add business logic below. (Right-click in editor and choose
-    // "Insert Code > Add Business Method")
+    @Override
+    public void editarVehiculo(VehiculoPojo vehiculo) {
+        em.merge(vehiculo);
+    }
+
+    @Override
+    public VehiculoPojo leerVehiculo(String id) {
+        return em.find(VehiculoPojo.class, id);
+    }
+
+    @Override
+    public void borrarVehiculo(String id) {
+        VehiculoPojo vehiculo = leerVehiculo(id);
+        em.remove(vehiculo);
+    }
+    
+    
+    
+
+    
 }

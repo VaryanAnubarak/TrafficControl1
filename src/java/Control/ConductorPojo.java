@@ -6,6 +6,7 @@
 package Control;
 
 import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
 
 /**
  *
@@ -14,6 +15,25 @@ import javax.ejb.Stateless;
 @Stateless
 public class ConductorPojo implements ConductorPojoLocal {
 
-    // Add business logic below. (Right-click in editor and choose
-    // "Insert Code > Add Business Method")
+    private EntityManager em;
+    @Override
+    public void anadirConductor(ConductorPojo conductor) {
+        em.persist(conductor);
+    }
+
+    @Override
+    public void editarConductor(ConductorPojo conductor) {
+        em.merge(conductor);
+    }
+
+    @Override
+    public ConductorPojo leerConductor(String id) {
+        return em.find(ConductorPojo.class, id);
+    }
+
+    @Override
+    public void borrarConductor(String id) {
+        ConductorPojo conductor = leerConductor(id);
+        em.remove(conductor);
+    }
 }

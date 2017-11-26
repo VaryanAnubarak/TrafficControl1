@@ -13,5 +13,11 @@ import javax.ejb.Local;
  */
 @Local
 public interface ConductorPojoLocal {
-    
+    void anadirConductor(ConductorPojo conductor);
+
+    void editarConductor(ConductorPojo conductor);
+
+    ConductorPojo leerConductor(String id);
+
+    void borrarConductor(String id);
 }

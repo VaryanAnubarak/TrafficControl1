@@ -5,6 +5,7 @@
  */
 package Control;
 
+import Modelo.VehiculoPojo;
 import javax.ejb.Local;
 
 /**
@@ -13,5 +14,14 @@ import javax.ejb.Local;
  */
 @Local
 public interface VehiculoDaoLocal {
+
+    void anadirVehiculo(VehiculoPojo vehiculo);
+
+    void editarVehiculo(VehiculoPojo vehiculo);
+
+    VehiculoPojo leerVehiculo(String id);
+
+    void borrarVehiculo(String id);
+
     
 }
