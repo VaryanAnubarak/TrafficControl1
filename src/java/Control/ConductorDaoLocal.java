@@ -18,7 +18,7 @@ public interface ConductorDaoLocal {
 
     void editarConductor(ConductorPojo conductor);
 
-    ConductorDao leerConductor(String id);
+    ConductorPojo leerConductor(String id);
 
     void borrarConductor(String id);
 }

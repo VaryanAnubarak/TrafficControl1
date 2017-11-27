@@ -28,13 +28,13 @@ public class ConductorDao implements ConductorDaoLocal {
     }
 
     @Override
-    public ConductorDao leerConductor(String id) {
-        return em.find(ConductorDao.class, id);
+    public ConductorPojo leerConductor(String id) {
+        return em.find(ConductorPojo.class, id);
     }
 
     @Override
     public void borrarConductor(String id) {
-        ConductorDao conductor = leerConductor(id);
+        ConductorPojo conductor = leerConductor(id);
         em.remove(conductor);
     }
 }

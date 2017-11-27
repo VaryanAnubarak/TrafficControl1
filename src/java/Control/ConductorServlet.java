@@ -51,7 +51,7 @@ public class ConductorServlet extends HttpServlet {
                 tipoPago = Integer.parseInt(tipoPagoStr);
             }
             ConductorPojo conductor = new ConductorPojo(id, fechaEntradaPeaje, horaEntradaPeaje, pagoPeaje, tipoPago, nombre, cedula);
-            if("Añadir".equalsIgnoreCase(action)){
+            if("Anadir".equalsIgnoreCase(action)){
                 conductorDao.anadirConductor(conductor);
             }else if("Borrar".equals(action)){
                 conductorDao.borrarConductor(id);
