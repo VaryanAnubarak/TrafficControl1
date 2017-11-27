@@ -6,6 +6,7 @@
 package Control;
 
 import Modelo.VehiculoPojo;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 
@@ -35,6 +36,11 @@ public class VehiculoDao implements VehiculoDaoLocal {
     public void borrarVehiculo(String id) {
         VehiculoPojo vehiculo = leerVehiculo(id);
         em.remove(vehiculo);
+    }
+
+    @Override
+    public List<VehiculoPojo> getAllVehiculos() {
+        return em.createNamedQuery("VehiculoPojo.getAll").getResultList();
     }
     
     

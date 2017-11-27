@@ -18,26 +18,26 @@
             <table>
                 <tr>
                     <th> Student ID</th>
-                    <th><input type="text" name="studentId" value="${student.studentId}"/> </th>
+                    <th><input type="text" name="studentId" value="${conductor.id}"/> </th>
                 </tr>
                 <tr>
                     <th> First Name</th>
-                    <th> <input type="text" name="firstname" value="${student.firstname}"/></th>
+                    <th> <input type="text" name="firstname" value="${conductor.nombre}"/></th>
                 </tr>
                 <tr>
                     <th> Last Name</th>
-                    <th><input type="text" name="lastname" value="${student.lastname}"/> </th>
+                    <th><input type="text" name="lastname" value="${conductor.cedula}"/> </th>
                 </tr>
                 <tr>
                     <th> Year Level</th>
-                    <th> <input type="text" name="yearLevel" value="${student.yearLevel}"/></th>
+                    <th> <input type="text" name="yearLevel" value="${conductor.tipoPago}"/></th>
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <input type="submit" name="action" value="Add"/>
-                        <input type="submit" name="action" value="Edit"/>
-                        <input type="submit" name="action" value="Delete"/>
-                        <input type="submit" name="action" value="Search"/>
+                        <input type="submit" name="action" value="Anadir"/>
+                        <input type="submit" name="action" value="Editar"/>
+                        <input type="submit" name="action" value="Borrar"/>
+                        <input type="submit" name="action" value="Buscar"/>
                     </td>
                 </tr>
             </table>
@@ -48,12 +48,12 @@
             <th>First Name</th>
             <th>Last Name</th>
             <th>Year Level</th>
-            <c:forEach items="${allStudents}" var="stud">
+            <c:forEach items="${allConductores}" var="conductor">
                 <tr>
-                    <td>${stud.studentId}</td>
-                    <td>${stud.firstname}</td>
-                    <td>${stud.lastname}</td>
-                    <td>${stud.yearLevel}</td>
+                    <td>${conductor.nombre}</td>
+                    <td>${conductor.cedula}</td>
+                    <td>${conductor.tipoPago}</td>
+                    <td>${conductor.id}</td>
                 </tr>
             </c:forEach>
         </table>

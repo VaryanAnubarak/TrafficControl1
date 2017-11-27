@@ -6,6 +6,7 @@
 package Control;
 
 import Modelo.VehiculoPojo;
+import java.util.List;
 import javax.ejb.Local;
 
 /**
@@ -22,6 +23,8 @@ public interface VehiculoDaoLocal {
     VehiculoPojo leerVehiculo(String id);
 
     void borrarVehiculo(String id);
+
+    List<VehiculoPojo> getAllVehiculos();
 
     
 }

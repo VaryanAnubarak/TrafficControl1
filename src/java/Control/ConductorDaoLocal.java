@@ -6,6 +6,7 @@
 package Control;
 
 import Modelo.ConductorPojo;
+import java.util.List;
 import javax.ejb.Local;
 
 /**
@@ -21,4 +22,6 @@ public interface ConductorDaoLocal {
     ConductorPojo leerConductor(String id);
 
     void borrarConductor(String id);
+
+    List<ConductorPojo> getAllConductores();
 }

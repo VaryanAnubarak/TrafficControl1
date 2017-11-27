@@ -6,6 +6,7 @@
 package Control;
 
 import Modelo.ConductorPojo;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 
@@ -36,5 +37,10 @@ public class ConductorDao implements ConductorDaoLocal {
     public void borrarConductor(String id) {
         ConductorPojo conductor = leerConductor(id);
         em.remove(conductor);
+    }
+
+    @Override
+    public List<ConductorPojo> getAllConductores() {
+        return em.createNamedQuery("ConductorPojo.getAll").getResultList();
     }
 }
