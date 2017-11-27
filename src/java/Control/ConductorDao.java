@@ -5,6 +5,7 @@
  */
 package Control;
 
+import Modelo.ConductorPojo;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 
@@ -13,7 +14,7 @@ import javax.persistence.EntityManager;
  * @author jairo
  */
 @Stateless
-public class ConductorPojo implements ConductorPojoLocal {
+public class ConductorDao implements ConductorDaoLocal {
 
     private EntityManager em;
     @Override
@@ -27,13 +28,13 @@ public class ConductorPojo implements ConductorPojoLocal {
     }
 
     @Override
-    public ConductorPojo leerConductor(String id) {
-        return em.find(ConductorPojo.class, id);
+    public ConductorDao leerConductor(String id) {
+        return em.find(ConductorDao.class, id);
     }
 
     @Override
     public void borrarConductor(String id) {
-        ConductorPojo conductor = leerConductor(id);
+        ConductorDao conductor = leerConductor(id);
         em.remove(conductor);
     }
 }

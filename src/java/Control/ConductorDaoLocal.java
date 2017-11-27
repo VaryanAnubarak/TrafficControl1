@@ -5,6 +5,7 @@
  */
 package Control;
 
+import Modelo.ConductorPojo;
 import javax.ejb.Local;
 
 /**
@@ -12,12 +13,12 @@ import javax.ejb.Local;
  * @author jairo
  */
 @Local
-public interface ConductorPojoLocal {
+public interface ConductorDaoLocal {
     void anadirConductor(ConductorPojo conductor);
 
     void editarConductor(ConductorPojo conductor);
 
-    ConductorPojo leerConductor(String id);
+    ConductorDao leerConductor(String id);
 
     void borrarConductor(String id);
 }
